@@ -33,26 +33,33 @@ Route::group(['middleware' => ['role:admin']], function() {
       // Barhanbaku
     Route::resource('/bahanbaku', 'BahanBakuController');
     Route::get('/bahanbaku/hapus/{kd_bb}', 'BahanBakuController@destroy');
-    Route::get('/bahanbaku/edit/{id}', 'BahanBakuController@edit');
-    //Menu
-    //Food
-    Route::resource('/food', 'FoodController');
-    Route::get('/food/hapus/{kd_menu}', 'FoodController@destroy');
-    Route::get('/food/edit/{id}', 'FoodController@edit');
-    //Drink
-    Route::resource('/drink', 'DrinkController');
-    Route::get('/drink/hapus/{kd_menu}', 'DrinkController@destroy');
-    Route::get('/drink/edit/{id}', 'DrinkController@edit');
-     //Snack
-    Route::resource('/snack', 'SnackController');
-    Route::get('/snack/hapus/{kd_menu}', 'SnackController@destroy');
-    Route::get('/snack/edit/{id}', 'SnackController@edit');
-
+    Route::get('/bahanbaku/edit/{kd_bb}', 'BahanBakuController@edit');
+     //Produk
+    Route::resource('/produk', 'ProdukController');
+    Route::get('/produk/hapus/{kd_produk}', 'ProdukController@destroy');
+    Route::get('/produk/edit/{kd_produk}', 'ProdukController@edit');
+    // Pemesanan
+    Route::get('/transaksi', 'PemesananController@index')->name('pemesanan.index');
+    Route::post('/sem/store', 'PemesananController@store');
+    Route::get('/transaksi/hapus/{kd_bb}', 'PemesananController@destroy');
+    // Detail Pesan
+    Route::post('/detail/simpan', 'DetailPesanController@simpan');
+    // Pembelian
+    Route::get('/pembelian', 'PembelianController@index')->name('pembelian.transaksi');
+    Route::get('/pembelian-beli/{id}', 'PembelianController@edit');
+    Route::post('/pembelian/simpan', 'PembelianController@simpan');
+    Route::get('/transaksi/hapus/{kd_bb}', 'DetailPembelianController@destroy');
+    Route::get('/laporan/faktur/{invoice}', 'PembelianController@pdf')->name('cetak.order_pdf');
+    // Retur
+    Route::get('/retur','ReturController@index')->name('retur.transaksi');
+    Route::get('/retur-beli/{id}', 'ReturController@edit');
+    Route::post('/retur/simpan', 'ReturController@simpan');
 });
 
-//Input Pemesanan
-Route::resource('/inputpemesanan', 'InputPemesananController');
-Route::get('/transaksi', 'InputPemesananController@index')->name('input_pemesanan.transaksi');
-Route::post('/sem/store', 'InputPemesananController@store');
-Route::get('/transaksi/hapus/{kd_menu}', 'InputPemesananController@destroy');
+//Order
+Route::resource('/Order', 'OrderController');
+Route::get('/pos', 'OrderController@index')->name('order.index');
+Route::post('/temp/store/{kd_produk}', 'OrderController@store');
+Route::get('/pos/del/{kd_produk}', 'OrderController@destroy');
+Route::post('/pos/save', 'DetailOrderController@store');
 

@@ -35,7 +35,7 @@
         <div class="wrapper">
 
             <!-- Navbar -->
-            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav class="main-header navbar navbar-expand navbar-primary navbar-dark">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -89,8 +89,8 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4 ">
                 <!-- Brand Logo -->
                 <a href="{{ route('home') }}" class="brand-link">
-                    <img src="{{asset('asset/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                    <span class="brand-text font-weight-light">e Coffe </span>
+                    <img src="{{asset('asset/dist/img/logo1.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <span class="brand-text font-weight-light">Chopper Coffe Shop</span>
                 </a>
                 <!-- Sidebar -->
                 <div class="sidebar">
@@ -134,31 +134,11 @@
                                     <p>Bahan Baku</p>
                                 </a>
                             </li>
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item">
+                                <a href="{{ route('produk.index') }}" class="nav-link">
                                     <i class="nav-icon fas fa-box"></i>
-                                    <p>Menu<i class="right fas fa-angle-left"></i></p>
+                                    <p>Produk</p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ route('food.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Food </p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('drink.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Drink </p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('snack.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Snack </p>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
@@ -167,19 +147,19 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ url('produk') }}" class="nav-link">
+                                        <a href="{{ route('pemesanan.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pemesanan </p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ url('unit') }}" class="nav-link">
+                                        <a href="{{ route('pembelian.transaksi') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pembelian </p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ url('unit') }}" class="nav-link">
+                                        <a href="{{ route('retur.transaksi') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Retur</p>
                                         </a>
@@ -215,19 +195,19 @@
                             @endrole
                             <li class="nav-header">POINT OF SALES</li>
                             <li class="nav-item">
-                                <a href="{{ route('inputpemesanan.index') }}" class="nav-link">
+                                <a href="{{ route('order.index') }}" class="nav-link">
                                     <i class="nav-icon fas fa-shopping-cart"></i>
-                                    <p>Input Pemesanan</p>
+                                    <p>Input Order</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ url('pemasok') }}" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-dollar-sign"></i>
                                     <p>Pembayaran</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ url('pemasok') }}" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-sticky-note"></i>
                                     <p>Nota</p>
                                 </a>
@@ -278,11 +258,10 @@
 
         <!--Footer-->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            <div align="center">
+                <strong>Copyright &copy; 2021-2026 <a href="{{ route('home') }}">E Coffe</a>.</strong>
             All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.1.0
-            </div>
+        </div>
         </footer>
         <!--End OF Footer-->
 

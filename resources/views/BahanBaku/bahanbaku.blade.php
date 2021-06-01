@@ -18,8 +18,8 @@
                         <thead class="thead-dark">
                     <tr>
                         <th>Kode BB</th>
-                        <th>Nama BB</th>
-                        <th>Harga BB</th>
+                        <th>Nama </th>
+                        <th>Harga  </th>
                         <th>Stok </th>
                         <th>Aksi</th>
                     </tr>
